@@ -1,6 +1,8 @@
 module.exports = {
     build: [
         'clean:build',
+        'copy:namespace',
+        'replace:namespace',
         'sh:build-es2018',
         'sh:build-es5'
     ],
