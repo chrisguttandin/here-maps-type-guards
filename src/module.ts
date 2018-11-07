@@ -3,9 +3,8 @@ import { IHereMaps, IHereMapsWithServiceNamespace, IHereMapsWithUiNamespace } fr
 export * from './interfaces';
 export * from './types';
 
-const GLOBAL_H = <unknown> ((typeof window === 'object') ? (<any> window).H : undefined);
-
-export { GLOBAL_H as H };
+// @todo This is unfortunately useless right now because TypeScript does not allow to change the type of imported unknown values.
+export const H = <unknown> ((typeof window === 'object') ? (<any> window).H : undefined);
 
 export const isHereMaps = (H: unknown): H is IHereMaps => { // tslint:disable-line:no-shadowed-variable
     return typeof H === 'object' && H !== null && 'geo' in H && 'Map' in H && 'map' in H && 'math' in H && 'util' in H;
