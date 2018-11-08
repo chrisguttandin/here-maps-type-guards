@@ -1,9 +1,17 @@
-import { isHereMaps, isHereMapsWithServiceNamespace, isHereMapsWithUiNamespace } from '../../src/module';
+import { isHereMaps, isHereMapsWithClusteringNamespace, isHereMapsWithServiceNamespace, isHereMapsWithUiNamespace } from '../../src/module';
 
 describe('isHereMaps()', () => {
 
     it('should be a function', () => {
         expect(isHereMaps).to.be.a('function');
+    });
+
+});
+
+describe('isHereMapsWithClusteringNamespace()', () => {
+
+    it('should be a function', () => {
+        expect(isHereMapsWithClusteringNamespace).to.be.a('function');
     });
 
 });
