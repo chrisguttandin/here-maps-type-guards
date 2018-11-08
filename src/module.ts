@@ -10,7 +10,6 @@ import {
 export * from './interfaces';
 export * from './types';
 
-// @todo This is unfortunately useless right now because TypeScript does not allow to change the type of imported unknown values.
 export const H: unknown = (typeof window === 'object') ? (<any> window).H : undefined;
 
 export const isHereMaps = (H: unknown): H is IHereMaps => { // tslint:disable-line:no-shadowed-variable
