@@ -1,4 +1,10 @@
-import { IHereMaps, IHereMapsWithClusteringNamespace, IHereMapsWithServiceNamespace, IHereMapsWithUiNamespace } from './interfaces';
+import {
+    IHereMaps,
+    IHereMapsWithClusteringNamespace,
+    IHereMapsWithDataNamespace,
+    IHereMapsWithServiceNamespace,
+    IHereMapsWithUiNamespace
+} from './interfaces';
 
 export * from './interfaces';
 export * from './types';
@@ -12,6 +18,10 @@ export const isHereMaps = (H: unknown): H is IHereMaps => { // tslint:disable-li
 
 export const isHereMapsWithClusteringNamespace = (H: unknown): H is IHereMapsWithClusteringNamespace => { // tslint:disable-line:max-line-length no-shadowed-variable
     return isHereMaps(H) && 'clustering' in H;
+};
+
+export const isHereMapsWithDataNamespace = (H: unknown): H is IHereMapsWithDataNamespace => { // tslint:disable-line:no-shadowed-variable
+    return isHereMaps(H) && 'data' in H;
 };
 
 export const isHereMapsWithServiceNamespace = (H: unknown): H is IHereMapsWithServiceNamespace => { // tslint:disable-line:max-line-length no-shadowed-variable
