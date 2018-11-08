@@ -24,18 +24,14 @@ This module provides a guard for each of the [submodules](https://developer.here
 
 The guards are useful to ensure type safety and to do runtime checks at the same time.
 
-All guards expect that you have defined a variable somewhere which potentially holds a reference to the global H object provided by HERE Maps.
-
-```typescript
-const H: unknown = (typeof window === 'object') ? (<any> window).H : undefined;
-```
+Additionally the globally available `H` object which HERE Maps attaches to the window is also exported. It is of type unknown and needs to be narrowed with at least one guard before it can be used.
 
 ### isHereMaps
 
 This is a guard which checks the availability of the core module.
 
 ```typescript
-import { isHereMaps } from 'here-maps-type-guards';
+import { H, isHereMaps } from 'here-maps-type-guards';
 
 if (isHereMaps(H)) {
     // H is not unknown anymore.
@@ -47,7 +43,7 @@ if (isHereMaps(H)) {
 This is a guard which checks the availability of the clustering module which includes a check for the core module.
 
 ```typescript
-import { isHereMapsWithClusteringNamespace } from 'here-maps-type-guards';
+import { H, isHereMapsWithClusteringNamespace } from 'here-maps-type-guards';
 
 if (isHereMapsWithClusteringNamespace(H)) {
     // H is not unknown anymore.
@@ -60,7 +56,7 @@ if (isHereMapsWithClusteringNamespace(H)) {
 This is a guard which checks the availability of the data module which includes a check for the core module.
 
 ```typescript
-import { isHereMapsWithDataNamespace } from 'here-maps-type-guards';
+import { H, isHereMapsWithDataNamespace } from 'here-maps-type-guards';
 
 if (isHereMapsWithDataNamespace(H)) {
     // H is not unknown anymore.
@@ -73,7 +69,7 @@ if (isHereMapsWithDataNamespace(H)) {
 This is a guard which checks the availability of the mapevents module which includes a check for the core module.
 
 ```typescript
-import { isHereMapsWithMapEventsNamespace } from 'here-maps-type-guards';
+import { H, isHereMapsWithMapEventsNamespace } from 'here-maps-type-guards';
 
 if (isHereMapsWithMapEventsNamespace(H)) {
     // H is not unknown anymore.
@@ -86,7 +82,7 @@ if (isHereMapsWithMapEventsNamespace(H)) {
 This is a guard which checks the availability of the service module which includes a check for the core module.
 
 ```typescript
-import { isHereMapsWithServiceNamespace } from 'here-maps-type-guards';
+import { H, isHereMapsWithServiceNamespace } from 'here-maps-type-guards';
 
 if (isHereMapsWithServiceNamespace(H)) {
     // H is not unknown anymore.
