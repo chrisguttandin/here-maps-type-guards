@@ -35,6 +35,8 @@ const H: unknown = (typeof window === 'object') ? (<any> window).H : undefined;
 This is a guard which checks the availability of the core module.
 
 ```typescript
+import { isHereMaps } from 'here-maps-type-guards';
+
 if (isHereMaps(H)) {
     // H is not unknown anymore.
 }
@@ -45,6 +47,8 @@ if (isHereMaps(H)) {
 This is a guard which checks the availability of the clustering module which includes a check for the core module.
 
 ```typescript
+import { isHereMapsWithClusteringNamespace } from 'here-maps-type-guards';
+
 if (isHereMapsWithClusteringNamespace(H)) {
     // H is not unknown anymore.
     // H.clustering is also defined.
@@ -56,6 +60,8 @@ if (isHereMapsWithClusteringNamespace(H)) {
 This is a guard which checks the availability of the data module which includes a check for the core module.
 
 ```typescript
+import { isHereMapsWithDataNamespace } from 'here-maps-type-guards';
+
 if (isHereMapsWithDataNamespace(H)) {
     // H is not unknown anymore.
     // H.data is also defined.
@@ -67,6 +73,8 @@ if (isHereMapsWithDataNamespace(H)) {
 This is a guard which checks the availability of the mapevents module which includes a check for the core module.
 
 ```typescript
+import { isHereMapsWithMapEventsNamespace } from 'here-maps-type-guards';
+
 if (isHereMapsWithMapEventsNamespace(H)) {
     // H is not unknown anymore.
     // H.mapevents is also defined.
@@ -78,6 +86,8 @@ if (isHereMapsWithMapEventsNamespace(H)) {
 This is a guard which checks the availability of the service module which includes a check for the core module.
 
 ```typescript
+import { isHereMapsWithServiceNamespace } from 'here-maps-type-guards';
+
 if (isHereMapsWithServiceNamespace(H)) {
     // H is not unknown anymore.
     // H.service is also defined.
