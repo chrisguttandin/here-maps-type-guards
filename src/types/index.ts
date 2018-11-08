@@ -3,6 +3,7 @@ export * from './here-maps-clustering';
 export * from './here-maps-data';
 export * from './here-maps-geo';
 export * from './here-maps-map';
+export * from './here-maps-map-events';
 export * from './here-maps-math';
 export * from './here-maps-service';
 export * from './here-maps-ui';

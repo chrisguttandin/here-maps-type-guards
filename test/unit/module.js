@@ -1,4 +1,4 @@
-import { isHereMaps, isHereMapsWithClusteringNamespace, isHereMapsWithDataNamespace, isHereMapsWithServiceNamespace, isHereMapsWithUiNamespace } from '../../src/module';
+import { isHereMaps, isHereMapsWithClusteringNamespace, isHereMapsWithDataNamespace, isHereMapsWithMapEventsNamespace, isHereMapsWithServiceNamespace, isHereMapsWithUiNamespace } from '../../src/module';
 
 describe('isHereMaps()', () => {
 
@@ -20,6 +20,14 @@ describe('isHereMapsWithDataNamespace()', () => {
 
     it('should be a function', () => {
         expect(isHereMapsWithDataNamespace).to.be.a('function');
+    });
+
+});
+
+describe('isHereMapsWithMapEventsNamespace()', () => {
+
+    it('should be a function', () => {
+        expect(isHereMapsWithMapEventsNamespace).to.be.a('function');
     });
 
 });
