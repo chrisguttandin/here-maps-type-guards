@@ -3,6 +3,6 @@ import { IHereMaps } from './here-maps';
 
 export interface IHereMapsWithMapEventsNamespace extends IHereMaps {
 
-    service: THereMapsMapEvents;
+    mapevents: THereMapsMapEvents;
 
 }

@@ -3,6 +3,6 @@ import { IHereMaps } from './here-maps';
 
 export interface IHereMapsWithClusteringNamespace extends IHereMaps {
 
-    ui: THereMapsClustering;
+    clustering: THereMapsClustering;
 
 }
