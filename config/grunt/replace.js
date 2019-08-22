@@ -8,7 +8,7 @@ module.exports = {
         options: {
             patterns: [
                 {
-                    match: /(.*)/s,
+                    match: /.*/s,
                     replacement: (match) => `/* tslint:disable */\n${ match }`
                 },
                 {
