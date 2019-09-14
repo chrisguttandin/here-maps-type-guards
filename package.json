@@ -20,7 +20,7 @@
     "@babel/preset-env": "^7.6.0",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-angular": "^8.1.0",
-    "@types/heremaps": "^3.0.14",
+    "@types/heremaps": "^3.0.15",
     "chai": "^4.2.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
