@@ -7,8 +7,12 @@ import {
     IHereMapsWithUiNamespace
 } from './interfaces';
 
-export * from './interfaces';
-export * from './types';
+/*
+ * @todo Explicitly referencing the barrel file seems to be necessary when enabling the
+ * isolatedModules compiler option.
+ */
+export * from './interfaces/index';
+export * from './types/index';
 
 export const H: unknown = (typeof window === 'object') ? (<any> window).H : undefined;
 
