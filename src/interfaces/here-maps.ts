@@ -1,7 +1,6 @@
 import { THereMaps, THereMapsGeo, THereMapsMap, THereMapsMath, THereMapsUtil } from '../types';
 
 export interface IHereMaps {
-
     geo: THereMapsGeo;
 
     Map: THereMaps;
@@ -11,5 +10,4 @@ export interface IHereMaps {
     math: THereMapsMath;
 
     util: THereMapsUtil;
-
 }

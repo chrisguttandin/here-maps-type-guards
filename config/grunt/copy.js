@@ -8,7 +8,7 @@ module.exports = {
                 dest: 'src/namespace',
                 expand: true,
                 rename: (dest) => join(dest, 'namespace.ts'),
-                src: [ 'index.d.ts' ]
+                src: ['index.d.ts']
             }
         ]
     }

@@ -1,3 +1,3 @@
 import { H } from '../namespace/namespace';
 
-export type THereMapsUtil = (typeof H)['util'];
+export type THereMapsUtil = typeof H['util'];
