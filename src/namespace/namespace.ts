@@ -783,6 +783,12 @@ export declare namespace H {
              * @return {string} - the resulting WKT string
              */
             toString(): string;
+
+            /**
+             * To obtain a GeoJSON representation of the given geometry.
+             * @return {object} - A GeoJSON Geometry object representing the given geometry.
+             */
+            toGeoJSON(): object;
         }
 
         /**
