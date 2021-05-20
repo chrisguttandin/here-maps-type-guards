@@ -2,7 +2,7 @@
 
 **A guarded version of the TypeScript type definitions for HERE Maps.**
 
-[![dependencies](https://img.shields.io/david/chrisguttandin/here-maps-type-guards.svg?style=flat-square)](https://www.npmjs.com/package/here-maps-type-guards)
+[![dependencies](https://img.shields.io/david/chrisguttandin/here-maps-type-guards.svg?style=flat-square)](https://github.com/chrisguttandin/here-maps-type-guards/network/dependencies)
 [![version](https://img.shields.io/npm/v/here-maps-type-guards.svg?style=flat-square)](https://www.npmjs.com/package/here-maps-type-guards)
 
 This module provides TypeScript type guards which assure TypeScript that a value of type unknown is actually a [HERE Maps](https://here.com) module. It can be thought of as a scoped version of the [@types/heremaps](https://www.npmjs.com/package/@types/heremaps) module.
