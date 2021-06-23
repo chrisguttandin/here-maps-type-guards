@@ -62,12 +62,6 @@
         "src/"
     ],
     "homepage": "https://github.com/chrisguttandin/here-maps-type-guards",
-    "husky": {
-        "hooks": {
-            "commit-msg": "commitlint --edit --extends @commitlint/config-angular",
-            "pre-commit": "pretty-quick --config config/prettier/config.json --staged && grunt lint"
-        }
-    },
     "keywords": [
         "here",
         "heremaps",
@@ -83,6 +77,7 @@
         "url": "https://github.com/chrisguttandin/here-maps-type-guards.git"
     },
     "scripts": {
+        "prepare": "husky install",
         "prepublishOnly": "grunt build",
         "test": "grunt lint && grunt test"
     },
