@@ -308,19 +308,19 @@ export declare namespace H {
          * @property noWrap {boolean=} - Indicates whether to wrap the world on longitude axes. When set to true, only one world will be rendered. Default is false, multiple worlds are rendered.
          */
         interface Options {
-            center?: H.geo.IPoint;
-            zoom?: number;
-            bounds?: H.geo.Rect;
-            layers?: H.map.layer.Layer[];
-            engineType?: EngineType;
-            pixelRatio?: number;
-            imprint?: H.map.Imprint.Options;
-            renderBaseBackground?: BackgroundRange;
-            autoColor?: boolean;
-            margin?: number;
-            padding?: H.map.ViewPort.Padding;
-            fixedCenter?: boolean;
-            noWrap?: boolean;
+            center?: H.geo.IPoint | undefined;
+            zoom?: number | undefined;
+            bounds?: H.geo.Rect | undefined;
+            layers?: H.map.layer.Layer[] | undefined;
+            engineType?: EngineType | undefined;
+            pixelRatio?: number | undefined;
+            imprint?: H.map.Imprint.Options | undefined;
+            renderBaseBackground?: BackgroundRange | undefined;
+            autoColor?: boolean | undefined;
+            margin?: number | undefined;
+            padding?: H.map.ViewPort.Padding | undefined;
+            fixedCenter?: boolean | undefined;
+            noWrap?: boolean | undefined;
         }
     }
 
@@ -640,10 +640,10 @@ export declare namespace H {
              * @property strategy {H.clustering.Provider.Strategy=} - clustering stretegy, defaults to H.clustering.Provider.Strategy.FASTGRID
              */
             interface ClusteringOptions {
-                eps?: number;
-                minWeight?: number;
-                projection?: H.geo.IProjection;
-                strategy?: H.clustering.Provider.Strategy;
+                eps?: number | undefined;
+                minWeight?: number | undefined;
+                projection?: H.geo.IProjection | undefined;
+                strategy?: H.clustering.Provider.Strategy | undefined;
             }
 
             /**
@@ -654,10 +654,10 @@ export declare namespace H {
              * @property theme {H.clustering.ITheme=} - cluster and noise point graphical representation
              */
             interface Options {
-                min?: number;
-                max?: number;
-                clusteringOptions?: H.clustering.Provider.ClusteringOptions;
-                theme?: H.clustering.ITheme;
+                min?: number | undefined;
+                max?: number | undefined;
+                clusteringOptions?: H.clustering.Provider.ClusteringOptions | undefined;
+                theme?: H.clustering.ITheme | undefined;
             }
 
             /**
@@ -790,8 +790,8 @@ export declare namespace H {
                  * @property disableLegacyMode {boolean=} - An object providing additional reader configuration parameters.
                  */
                 interface Options {
-                    style?: (mapObject: H.map.Object) => void;
-                    disableLegacyMode?: boolean;
+                    style?: ((mapObject: H.map.Object) => void) | undefined;
+                    disableLegacyMode?: boolean | undefined;
                 }
             }
         }
@@ -865,8 +865,8 @@ export declare namespace H {
         interface IPoint {
             lat: H.geo.Latitude;
             lng: Longitude;
-            alt?: H.geo.Altitude;
-            ctx?: H.geo.AltitudeContext;
+            alt?: H.geo.Altitude | undefined;
+            ctx?: H.geo.AltitudeContext | undefined;
         }
 
         interface IProjection {
@@ -1656,7 +1656,7 @@ export declare namespace H {
              * @property draggable
              * @description This property ensure that the marker can receive drag events.
              */
-            draggable?: boolean;
+            draggable?: boolean | undefined;
         }
 
         namespace AbstractMarker {
@@ -1672,12 +1672,12 @@ export declare namespace H {
              * @property data {*} - Optional arbitrary data to be stored with this map object. This data can be retrieved by calling getData.
              */
             interface Options {
-                min?: number;
-                max?: number;
-                visibility?: boolean;
-                zIndex?: number;
-                provider?: H.map.provider.Provider;
-                icon?: H.map.Icon | H.map.DomIcon;
+                min?: number | undefined;
+                max?: number | undefined;
+                visibility?: boolean | undefined;
+                zIndex?: number | undefined;
+                provider?: H.map.provider.Provider | undefined;
+                icon?: H.map.Icon | H.map.DomIcon | undefined;
                 data?: any;
             }
         }
@@ -1712,10 +1712,10 @@ export declare namespace H {
              * If omitted or the value is false it defaults to 5
              */
             interface Options {
-                fillColor?: string;
-                width?: number;
-                length?: number;
-                frequency?: number;
+                fillColor?: string | undefined;
+                width?: number | undefined;
+                length?: number | undefined;
+                frequency?: number | undefined;
             }
         }
 
@@ -1786,13 +1786,13 @@ export declare namespace H {
              * @property data {*} - Optional arbitrary data to be stored with this map object. This data can be retrieved by calling getData
              */
             interface Options {
-                style?: H.map.SpatialStyle | H.map.SpatialStyle.Options;
-                visibility?: boolean;
-                precision?: number;
-                zIndex?: number;
-                min?: number;
-                max?: number;
-                provider?: H.map.provider.Provider;
+                style?: H.map.SpatialStyle | H.map.SpatialStyle.Options | undefined;
+                visibility?: boolean | undefined;
+                precision?: number | undefined;
+                zIndex?: number | undefined;
+                min?: number | undefined;
+                max?: number | undefined;
+                provider?: H.map.provider.Provider | undefined;
                 data?: any;
             }
         }
@@ -1862,12 +1862,12 @@ export declare namespace H {
              * @property data {*} - Optional arbitrary data to be stored with this map object. This data can be retrieved by calling getData
              */
             interface Options {
-                min?: number;
-                max?: number;
-                visibility?: boolean;
-                zIndex?: number;
-                provider?: H.map.provider.Provider;
-                icon?: H.map.DomIcon;
+                min?: number | undefined;
+                max?: number | undefined;
+                visibility?: boolean | undefined;
+                zIndex?: number | undefined;
+                provider?: H.map.provider.Provider | undefined;
+                icon?: H.map.DomIcon | undefined;
                 data?: any;
             }
         }
@@ -1970,13 +1970,13 @@ export declare namespace H {
              * @property objects {Array<H.map.Object>=} - A list of map objects to add initially to this group.
              */
             interface Options {
-                min?: number;
-                max?: number;
-                visibility?: boolean;
-                zIndex?: number;
-                provider?: H.map.provider.Provider;
+                min?: number | undefined;
+                max?: number | undefined;
+                visibility?: boolean | undefined;
+                zIndex?: number | undefined;
+                provider?: H.map.provider.Provider | undefined;
                 data?: any;
-                objects?: H.map.Object[];
+                objects?: H.map.Object[] | undefined;
             }
         }
 
@@ -2188,10 +2188,10 @@ export declare namespace H {
              * false. The option is ignored by IE9-10.
              */
             interface Options {
-                size?: H.math.ISize | number;
-                anchor?: H.math.IPoint;
-                hitArea?: H.map.HitArea;
-                asCanvas?: H.map.HitArea;
+                size?: H.math.ISize | number | undefined;
+                anchor?: H.math.IPoint | undefined;
+                hitArea?: H.map.HitArea | undefined;
+                asCanvas?: H.map.HitArea | undefined;
                 crossOrigin: boolean;
             }
         }
@@ -2255,9 +2255,9 @@ export declare namespace H {
              * @property href {string=} - The URL of the &quot;Terms of use&quot; link. If omitted the current value remains, default is &quot;http://here.com/terms&quot;.
              */
             interface Options {
-                invert?: boolean;
-                font?: string;
-                href?: string;
+                invert?: boolean | undefined;
+                font?: string | undefined;
+                href?: string | undefined;
             }
         }
 
@@ -2286,12 +2286,12 @@ export declare namespace H {
              * @property data {*} - Optional arbitrary data to be stored with this map object. This data can be retrieved by calling getData.
              */
             interface Options {
-                min?: number;
-                max?: number;
-                visibility?: boolean;
-                zIndex?: number;
-                provider?: H.map.provider.Provider;
-                icon?: H.map.Icon;
+                min?: number | undefined;
+                max?: number | undefined;
+                visibility?: boolean | undefined;
+                zIndex?: number | undefined;
+                provider?: H.map.provider.Provider | undefined;
+                icon?: H.map.Icon | undefined;
                 data?: any;
             }
         }
@@ -2429,11 +2429,11 @@ export declare namespace H {
              * @property data {*} - Optional arbitrary data to be stored with this map object. This data can be retrieved by calling getData.
              */
             interface Options {
-                min?: number;
-                max?: number;
-                visibility?: boolean;
-                zIndex?: number;
-                provider?: H.map.provider.Provider;
+                min?: number | undefined;
+                max?: number | undefined;
+                visibility?: boolean | undefined;
+                zIndex?: number | undefined;
+                provider?: H.map.provider.Provider | undefined;
                 data?: any;
             }
 
@@ -2521,12 +2521,12 @@ export declare namespace H {
              * @property data {*} - Optional arbitrary data to be stored with this map object. This data can be retrieved by calling getData.
              */
             interface Options {
-                min?: number;
-                max?: number;
-                opacity?: number;
-                visibility?: boolean;
-                zIndex?: number;
-                provider?: H.map.provider.Provider;
+                min?: number | undefined;
+                max?: number | undefined;
+                opacity?: number | undefined;
+                visibility?: boolean | undefined;
+                zIndex?: number | undefined;
+                provider?: H.map.provider.Provider | undefined;
                 data?: any;
             }
         }
@@ -2579,17 +2579,17 @@ export declare namespace H {
              * Indicates whether the map object is visible, the default is true A map object is only treated as visible, if it self and all of its nesting parent groups are visible.
              */
             interface Options {
-                style?: H.map.SpatialStyle | H.map.SpatialStyle.Options;
-                arrows?: H.map.ArrowStyle | H.map.ArrowStyle.Options;
-                visibility?: boolean;
-                volatility?: boolean;
-                zIndex?: number;
-                min?: number;
-                max?: number;
-                provider?: H.map.provider.Provider | null;
+                style?: H.map.SpatialStyle | H.map.SpatialStyle.Options | undefined;
+                arrows?: H.map.ArrowStyle | H.map.ArrowStyle.Options | undefined;
+                visibility?: boolean | undefined;
+                volatility?: boolean | undefined;
+                zIndex?: number | undefined;
+                min?: number | undefined;
+                max?: number | undefined;
+                provider?: H.map.provider.Provider | null | undefined;
                 data?: any;
-                extrusion?: number;
-                elevation?: number;
+                extrusion?: number | undefined;
+                elevation?: number | undefined;
             }
         }
 
@@ -2810,13 +2810,13 @@ export declare namespace H {
              * @property data {*} - Optional arbitrary data to be stored with this map object. This data can be retrieved by calling getData
              */
             interface Options {
-                style?: H.map.SpatialStyle | H.map.SpatialStyle.Options;
-                arrows?: H.map.ArrowStyle | H.map.ArrowStyle.Options;
-                visibility?: boolean;
-                zIndex?: number;
-                min?: number;
-                max?: number;
-                provider?: H.map.provider.Provider;
+                style?: (H.map.SpatialStyle | H.map.SpatialStyle.Options) | undefined;
+                arrows?: (H.map.ArrowStyle | H.map.ArrowStyle.Options) | undefined;
+                visibility?: boolean | undefined;
+                zIndex?: number | undefined;
+                min?: number | undefined;
+                max?: number | undefined;
+                provider?: H.map.provider.Provider | undefined;
                 data?: any;
             }
         }
@@ -2919,13 +2919,13 @@ export declare namespace H {
              * @property data {*} - Optional arbitrary data to be stored with this map object. This data can be retrieved by calling getData.
              */
             interface Options {
-                style?: H.map.SpatialStyle | H.map.SpatialStyle.Options;
-                arrows?: H.map.ArrowStyle | H.map.ArrowStyle.Options;
-                visibility?: boolean;
-                zIndex?: number;
-                min?: number;
-                max?: number;
-                provider?: H.map.provider.Provider;
+                style?: (H.map.SpatialStyle | H.map.SpatialStyle.Options) | undefined;
+                arrows?: (H.map.ArrowStyle | H.map.ArrowStyle.Options) | undefined;
+                visibility?: boolean | undefined;
+                zIndex?: number | undefined;
+                min?: number | undefined;
+                max?: number | undefined;
+                provider?: H.map.provider.Provider | undefined;
                 data?: any;
             }
         }
@@ -3002,14 +3002,14 @@ export declare namespace H {
              * @property lineDashOffset {number=} - The phase offset of the line dash pattern
              */
             interface Options {
-                strokeColor?: string;
-                fillColor?: string;
-                lineWidth?: number;
-                lineCap?: H.map.SpatialStyle.LineCap;
-                lineJoin?: H.map.SpatialStyle.LineJoin;
-                miterLimit?: number;
-                lineDash?: number[];
-                lineDashOffset?: number;
+                strokeColor?: string | undefined;
+                fillColor?: string | undefined;
+                lineWidth?: number | undefined;
+                lineCap?: H.map.SpatialStyle.LineCap | undefined;
+                lineJoin?: H.map.SpatialStyle.LineJoin | undefined;
+                miterLimit?: number | undefined;
+                lineDash?: number[] | undefined;
+                lineDashOffset?: number | undefined;
             }
         }
 
@@ -3094,12 +3094,12 @@ export declare namespace H {
              * {@link https://developer.here.com/documentation/maps/api_reference/H.map.ViewModel.html#.ILookAtData}
              */
             interface ILookAtData {
-                position?: H.geo.IPoint;
-                zoom?: number;
-                bounds?: H.geo.AbstractGeometry;
-                heading?: number;
-                incline?: number;
-                tilt?: number;
+                position?: H.geo.IPoint | undefined;
+                zoom?: number | undefined;
+                bounds?: H.geo.AbstractGeometry | undefined;
+                heading?: number | undefined;
+                incline?: number | undefined;
+                tilt?: number | undefined;
             }
 
             /**
@@ -3229,9 +3229,9 @@ export declare namespace H {
              * @property fixedCenter {boolean=} - Indicates whether the center of the map should remain unchanged if the viewport's size or or padding has been changed, default is true
              */
             interface Options {
-                margin?: number;
-                padding?: H.map.ViewPort.Padding;
-                fixedCenter?: boolean;
+                margin?: number | undefined;
+                padding?: H.map.ViewPort.Padding | undefined;
+                fixedCenter?: boolean | undefined;
             }
 
             /**
@@ -3426,8 +3426,8 @@ export declare namespace H {
                  * @property opacity {number=} - tile layer opacity, default is 1
                  */
                 interface Options {
-                    projection?: H.geo.IProjection;
-                    opacity?: number;
+                    projection?: H.geo.IProjection | undefined;
+                    opacity?: number | undefined;
                 }
 
                 /**
@@ -3510,11 +3510,11 @@ export declare namespace H {
                  * @property minWorldSize {number=} - The minimal world size at zoom level 0, default is 256
                  */
                 interface Options {
-                    min?: number;
-                    max?: number;
-                    dark?: boolean;
-                    projection?: H.geo.IProjection;
-                    minWorldSize?: number;
+                    min?: number | undefined;
+                    max?: number | undefined;
+                    dark?: boolean | undefined;
+                    projection?: H.geo.IProjection | undefined;
+                    minWorldSize?: number | undefined;
                 }
             }
 
@@ -3666,10 +3666,10 @@ export declare namespace H {
                  * @property pixelRatio {number=} - The pixelRatio to use for over-sampling in cases of high-resolution displays
                  */
                 interface Options {
-                    tileSize?: number;
-                    tileCacheSize?: number;
-                    dataCacheSize?: number;
-                    pixelRatio?: number;
+                    tileSize?: number | undefined;
+                    tileCacheSize?: number | undefined;
+                    dataCacheSize?: number | undefined;
+                    pixelRatio?: number | undefined;
                 }
 
                 /**
@@ -3743,17 +3743,17 @@ export declare namespace H {
                  * are used.
                  */
                 interface Options {
-                    uri?: string;
-                    min?: number;
-                    max?: number;
+                    uri?: string | undefined;
+                    min?: number | undefined;
+                    max?: number | undefined;
 
                     getCopyrights?(rect: H.geo.Rect, n: number): H.map.ICopyright[];
 
-                    tileSize?: number;
+                    tileSize?: number | undefined;
 
                     getURL(n1: number, n2: number, n3: number): string;
 
-                    crossOrigin?: string | boolean;
+                    crossOrigin?: string | boolean | undefined;
                 }
             }
 
@@ -3880,8 +3880,8 @@ export declare namespace H {
                  * @property providesDomMarkers {boolean=} - indicates if markers provided are of type H.map.DomMarker or H.map.Marker, default is H.map.Marker
                  */
                 interface Options {
-                    min?: number;
-                    max?: number;
+                    min?: number | undefined;
+                    max?: number | undefined;
 
                     requestData(
                         n1: number,
@@ -3891,7 +3891,7 @@ export declare namespace H {
                         f: () => void
                     ): H.util.ICancelable;
 
-                    providesDomMarkers?: boolean;
+                    providesDomMarkers?: boolean | undefined;
                 }
             }
 
@@ -4066,9 +4066,9 @@ export declare namespace H {
                  * @property getCopyrights {(function(H.geo.Rect, number): ?Array<H.map.ICopyright>)=} - A function to replace the default implementation of H.map.provider.Provider#getCopyrights
                  */
                 interface Options {
-                    uri?: string;
-                    min?: number;
-                    max?: number;
+                    uri?: string | undefined;
+                    min?: number | undefined;
+                    max?: number | undefined;
 
                     getCopyrights?(rect: H.geo.Rect, n: number): H.map.ICopyright[];
                 }
@@ -4208,13 +4208,13 @@ export declare namespace H {
                  * @property tileSize {number=} - The size of a tile as edge length in pixels. It must be 2^n where n is in range [0 ... 30], default is 256
                  */
                 interface Options {
-                    uri?: string;
-                    min?: number;
-                    max?: number;
+                    uri?: string | undefined;
+                    min?: number | undefined;
+                    max?: number | undefined;
 
                     getCopyrights?(rect: H.geo.Rect, number: number): H.map.ICopyright[];
 
-                    tileSize?: number;
+                    tileSize?: number | undefined;
                 }
             }
         }
@@ -4472,13 +4472,13 @@ export declare namespace H {
                 namespace RenderEngine {
                     interface Options {
                         /** Object describes how many cached zoom levels should be used as a base map background while base map tiles are */
-                        renderBaseBackground?: {};
+                        renderBaseBackground?: {} | undefined;
 
                         /** The pixelRatio to use for over-sampling in cases of high-resolution displays */
                         pixelRatio: number;
 
                         /** optional */
-                        enableSubpixelRendering?: boolean;
+                        enableSubpixelRendering?: boolean | undefined;
                     }
                 }
             }
@@ -4538,8 +4538,8 @@ export declare namespace H {
              * @property enable {number=} - The bitmask of behaviors to enable like H.mapevents.Behavior.DRAGGING. All are enabled by default.
              */
             interface Options {
-                kinetics?: H.util.kinetics.IKinetics;
-                enable?: H.math.BitMask;
+                kinetics?: H.util.kinetics.IKinetics | undefined;
+                enable?: H.math.BitMask | undefined;
             }
         }
 
@@ -5070,9 +5070,9 @@ export declare namespace H {
              * method.
              */
             interface Options {
-                subDomain?: string;
-                path?: string;
-                baseUrl?: H.service.Url;
+                subDomain?: string | undefined;
+                path?: string | undefined;
+                baseUrl?: H.service.Url | undefined;
             }
         }
 
@@ -5135,8 +5135,8 @@ export declare namespace H {
              * @property path {string=} - the path of the Geocoding service, default is '6.2'
              */
             interface Options {
-                subDomain?: string;
-                path?: string;
+                subDomain?: string | undefined;
+                path?: string | undefined;
             }
         }
 
@@ -5287,10 +5287,10 @@ export declare namespace H {
              * @property path {string=} - the path of the map tile service, default is 'maptile/2.1'
              */
             interface Options {
-                type?: string;
-                version?: string;
-                subDomain?: string;
-                path?: string;
+                type?: string | undefined;
+                version?: string | undefined;
+                subDomain?: string | undefined;
+                path?: string | undefined;
             }
         }
 
@@ -5310,13 +5310,13 @@ export declare namespace H {
          */
         interface MapType {
             map: H.map.layer.TileLayer;
-            mapnight?: H.map.layer.TileLayer | null;
+            mapnight?: H.map.layer.TileLayer | null | undefined;
             xbase: H.map.layer.TileLayer;
-            xbasenight?: H.map.layer.TileLayer | null;
+            xbasenight?: H.map.layer.TileLayer | null | undefined;
             base: H.map.layer.TileLayer;
-            basenight?: H.map.layer.TileLayer | null;
-            trafficincidents?: H.map.layer.MarkerTileLayer | null;
-            transit?: H.map.layer.TileLayer;
+            basenight?: H.map.layer.TileLayer | null | undefined;
+            trafficincidents?: H.map.layer.MarkerTileLayer | null | undefined;
+            transit?: H.map.layer.TileLayer | undefined;
             labels: H.map.layer.TileLayer;
         }
 
@@ -5459,9 +5459,9 @@ export declare namespace H {
              * @property baseUrl {H.service.Url=} - an optional base URL if it differs from the platform's default base URL
              */
             interface Options {
-                subDomain?: string;
-                path?: string;
-                baseUrl?: H.service.Url;
+                subDomain?: string | undefined;
+                path?: string | undefined;
+                baseUrl?: H.service.Url | undefined;
             }
         }
 
@@ -5597,13 +5597,13 @@ export declare namespace H {
              * Be aware that storing of content is not possible if crossOrigin is not set to true (see H.Map#storeContent).
              */
             interface DefaultLayersOptions {
-                tileSize?: number;
-                ppi?: number;
-                lg?: string;
-                lg2?: string;
-                style?: string;
-                pois?: boolean;
-                crossOrigin?: string | boolean;
+                tileSize?: number | undefined;
+                ppi?: number | undefined;
+                lg?: string | undefined;
+                lg2?: string | undefined;
+                style?: string | undefined;
+                pois?: boolean | undefined;
+                crossOrigin?: (string | boolean) | undefined;
             }
 
             /**
@@ -5615,18 +5615,18 @@ export declare namespace H {
              */
             interface Options {
                 apikey: string;
-                baseUrl?: H.service.Url;
-                useCIT?: boolean;
-                useHTTPS?: boolean;
+                baseUrl?: H.service.Url | undefined;
+                useCIT?: boolean | undefined;
+                useHTTPS?: boolean | undefined;
             }
 
             /**
              * pre-configured set of HERE tile layers for convenient use with the map.
              */
             interface MapTypes {
-                normal?: H.service.MapType;
-                satellite?: H.service.MapType;
-                terrain?: H.service.MapType;
+                normal?: H.service.MapType | undefined;
+                satellite?: H.service.MapType | undefined;
+                terrain?: H.service.MapType | undefined;
 
                 [key: string]: H.service.MapType | undefined;
             }
@@ -5664,9 +5664,9 @@ export declare namespace H {
              * @property baseUrl {H.service.Url=} - an optional base URL if it differs from the platform's default base URL
              */
             interface Options {
-                subDomain?: string;
-                path?: string;
-                baseUrl?: H.service.Url;
+                subDomain?: string | undefined;
+                path?: string | undefined;
+                baseUrl?: H.service.Url | undefined;
             }
         }
 
@@ -5683,139 +5683,149 @@ export declare namespace H {
         interface ServiceResult {
             [key: string]: any;
 
-            response?: {
-                language?: string;
-                route?: Array<{
-                    leg: Array<{
-                        maneuver: Array<{
-                            id: string;
-                            instruction: string;
-                            length: number;
-                            note: string[];
-                            position: {
-                                latitude: number;
-                                longitude: number;
-                            };
-                            shape: string[];
-                            travelTime: number;
-                            _type: string;
-                        }>;
-                    }>;
-                    mode: {
-                        feature: any[];
-                        trafficMode: string;
-                        transportModes: string[];
-                        type: string;
-                    };
-                    shape: string[];
-                    summary: {
-                        baseTime: number;
-                        distance: number;
-                        flags: string[];
-                        text: string;
-                        trafficTime: number;
-                        travelTime: number;
-                    };
-                    waypoint: Array<{
-                        label: string;
-                        linkId: string;
-                        mappedPosition: {
-                            latitude: number;
-                            longitude: number;
-                        };
-                        mappedRoadName: string;
-                        originalPosition: {
-                            latitude: number;
-                            longitude: number;
-                        };
-                        shapeIndex: number;
-                        sideOfStreet: string;
-                        spot: number;
-                        type: string;
-                    }>;
-                }>;
-                metaInfo: {};
-            };
-            results?: {
-                items?: any[];
-                next?: string;
-            };
-            search?: {
-                context: {
-                    href: string;
-                    location: {
-                        address: {
-                            city: string;
-                            country: string;
-                            countryCode: string;
-                            county: string;
-                            district: string;
-                            house: string;
-                            postalCode: string;
-                            stateCode: string;
-                            street: string;
-                            text: string;
-                        };
-                        position: number[];
-                    };
-                    type: string;
-                };
-            };
-            Response?: {
-                MetaInfo: {
-                    Timestamp: string;
-                };
-                View: Array<{
-                    Result: Array<{
-                        Location: {
-                            Address: {
-                                AdditionalData: Array<{
-                                    key: string;
-                                    value: string;
+            response?:
+                | {
+                      language?: string | undefined;
+                      route?:
+                          | Array<{
+                                leg: Array<{
+                                    maneuver: Array<{
+                                        id: string;
+                                        instruction: string;
+                                        length: number;
+                                        note: string[];
+                                        position: {
+                                            latitude: number;
+                                            longitude: number;
+                                        };
+                                        shape: string[];
+                                        travelTime: number;
+                                        _type: string;
+                                    }>;
                                 }>;
-                                City: string;
-                                Country: string;
-                                County: string;
-                                District: string;
-                                HouseNumber: string;
-                                Label: string;
-                                PostalCode: string;
-                                State: string;
-                                Street: string;
-                            };
-                            DisplayPosition: {
-                                Latitude: number;
-                                Longitude: number;
-                            };
-                            LocationId: string;
-                            LocationType: string;
-                            MapView: {
-                                BottomRight: {
-                                    Latitude: number;
-                                    Longitude: number;
+                                mode: {
+                                    feature: any[];
+                                    trafficMode: string;
+                                    transportModes: string[];
+                                    type: string;
                                 };
-                                TopLeft: {
-                                    Latitude: number;
-                                    Longitude: number;
+                                shape: string[];
+                                summary: {
+                                    baseTime: number;
+                                    distance: number;
+                                    flags: string[];
+                                    text: string;
+                                    trafficTime: number;
+                                    travelTime: number;
                                 };
-                            };
-                            NavigationPosition: Array<{
-                                Latitude: number;
-                                Longitude: number;
-                            }>;
-                        };
-                        MatchLevel: string;
-                        MatchQuality: {
-                            City: number;
-                            HouseNumber: number;
-                            Street: number[];
-                        };
-                        MatchType: string;
-                        Relevance: number;
-                    }>;
-                }>;
-                isolines: any[];
-            };
+                                waypoint: Array<{
+                                    label: string;
+                                    linkId: string;
+                                    mappedPosition: {
+                                        latitude: number;
+                                        longitude: number;
+                                    };
+                                    mappedRoadName: string;
+                                    originalPosition: {
+                                        latitude: number;
+                                        longitude: number;
+                                    };
+                                    shapeIndex: number;
+                                    sideOfStreet: string;
+                                    spot: number;
+                                    type: string;
+                                }>;
+                            }>
+                          | undefined;
+                      metaInfo: {};
+                  }
+                | undefined;
+            results?:
+                | {
+                      items?: any[] | undefined;
+                      next?: string | undefined;
+                  }
+                | undefined;
+            search?:
+                | {
+                      context: {
+                          href: string;
+                          location: {
+                              address: {
+                                  city: string;
+                                  country: string;
+                                  countryCode: string;
+                                  county: string;
+                                  district: string;
+                                  house: string;
+                                  postalCode: string;
+                                  stateCode: string;
+                                  street: string;
+                                  text: string;
+                              };
+                              position: number[];
+                          };
+                          type: string;
+                      };
+                  }
+                | undefined;
+            Response?:
+                | {
+                      MetaInfo: {
+                          Timestamp: string;
+                      };
+                      View: Array<{
+                          Result: Array<{
+                              Location: {
+                                  Address: {
+                                      AdditionalData: Array<{
+                                          key: string;
+                                          value: string;
+                                      }>;
+                                      City: string;
+                                      Country: string;
+                                      County: string;
+                                      District: string;
+                                      HouseNumber: string;
+                                      Label: string;
+                                      PostalCode: string;
+                                      State: string;
+                                      Street: string;
+                                  };
+                                  DisplayPosition: {
+                                      Latitude: number;
+                                      Longitude: number;
+                                  };
+                                  LocationId: string;
+                                  LocationType: string;
+                                  MapView: {
+                                      BottomRight: {
+                                          Latitude: number;
+                                          Longitude: number;
+                                      };
+                                      TopLeft: {
+                                          Latitude: number;
+                                          Longitude: number;
+                                      };
+                                  };
+                                  NavigationPosition: Array<{
+                                      Latitude: number;
+                                      Longitude: number;
+                                  }>;
+                              };
+                              MatchLevel: string;
+                              MatchQuality: {
+                                  City: number;
+                                  HouseNumber: number;
+                                  Street: number[];
+                              };
+                              MatchType: string;
+                              Relevance: number;
+                          }>;
+                      }>;
+                      isolines: any[];
+                  }
+                | undefined;
         }
 
         /**
@@ -5823,7 +5833,7 @@ export declare namespace H {
          * @property crossOrigin {boolean=} - The string to be set for the crossOrigin attribute for loaded images
          */
         interface TileProviderOptions {
-            crossOrigin?: boolean;
+            crossOrigin?: boolean | undefined;
         }
 
         namespace traffic {
@@ -5878,9 +5888,9 @@ export declare namespace H {
                  * @property baseUrl {H.service.Url=} - an optional base URL if it differs from the platform's default base URL
                  */
                 interface Options {
-                    subDomain?: string;
-                    path?: string;
-                    baseUrl?: H.service.Url;
+                    subDomain?: string | undefined;
+                    path?: string | undefined;
+                    baseUrl?: H.service.Url | undefined;
                 }
             }
         }
@@ -6122,9 +6132,9 @@ export declare namespace H {
                  * @property subDomain {string=} - the sub-domain of the map tile service relative to the platform's base URL, default is 'maps'
                  */
                 interface Options {
-                    type?: string;
-                    version?: string;
-                    subDomain?: string;
+                    type?: string | undefined;
+                    version?: string | undefined;
+                    subDomain?: string | undefined;
                 }
             }
 
@@ -6156,12 +6166,12 @@ export declare namespace H {
                  * @property categoryFilter {Array<string>=} - A list of meta-info category names which should be suppressed. See Metainfo Tile for valid category names.
                  */
                 interface Options {
-                    tileType?: string;
-                    scheme?: string;
-                    tileCacheSize?: number;
-                    tileSize?: number;
-                    pixelRatio?: number;
-                    categoryFilter?: string[];
+                    tileType?: string | undefined;
+                    scheme?: string | undefined;
+                    tileCacheSize?: number | undefined;
+                    tileSize?: number | undefined;
+                    pixelRatio?: number | undefined;
+                    categoryFilter?: string[] | undefined;
                 }
             }
         }
@@ -6320,8 +6330,8 @@ export declare namespace H {
                  * @property path {string=} - the path to append after host name when making requests to the Venue Maps API, default is empty
                  */
                 interface Options {
-                    subDomain?: string;
-                    path?: string;
+                    subDomain?: string | undefined;
+                    path?: string | undefined;
                 }
 
                 /**
@@ -6407,8 +6417,8 @@ export declare namespace H {
                  * used for space object styling.
                  */
                 interface Options {
-                    tileCacheSize?: number;
-                    pixelRatio?: number;
+                    tileCacheSize?: number | undefined;
+                    pixelRatio?: number | undefined;
 
                     onSpaceCreated?(space: H.service.venues.Space): void;
                 }
@@ -6510,11 +6520,11 @@ export declare namespace H {
              * specified measurement unit (see H.ui.UI.Options#unitSystem)
              */
             interface Options {
-                alignment?: H.ui.LayoutAlignment;
-                startIcon?: H.map.Icon;
-                stopoverIcon?: H.map.Icon;
-                endIcon?: H.map.Icon;
-                splitIcon?: H.map.Icon;
+                alignment?: H.ui.LayoutAlignment | undefined;
+                startIcon?: H.map.Icon | undefined;
+                stopoverIcon?: H.map.Icon | undefined;
+                endIcon?: H.map.Icon | undefined;
+                splitIcon?: H.map.Icon | undefined;
                 lineStyle: H.map.SpatialStyle | H.map.SpatialStyle.Options;
 
                 distanceFormatter?(n: number): void;
@@ -6654,9 +6664,9 @@ export declare namespace H {
              * @property incidents {H.map.layer.Layer} - the traffic incidents layer to be activated by the map settings control
              */
             interface Options {
-                alignment?: H.ui.LayoutAlignment;
-                baseLayers?: H.ui.MapSettingsControl.Entry[];
-                layers?: H.ui.MapSettingsControl.Entry[];
+                alignment?: H.ui.LayoutAlignment | undefined;
+                baseLayers?: H.ui.MapSettingsControl.Entry[] | undefined;
+                layers?: H.ui.MapSettingsControl.Entry[] | undefined;
             }
         }
 
@@ -6677,7 +6687,7 @@ export declare namespace H {
              * @property mapTypes {H.service.MapTypes} - The map types to use
              */
             interface Options {
-                alignment?: H.ui.LayoutAlignment;
+                alignment?: H.ui.LayoutAlignment | undefined;
                 mapTypes: H.service.MapType;
             }
         }
@@ -6698,7 +6708,7 @@ export declare namespace H {
              * @property alignment {H.ui.LayoutAlignment=} - the layout alignment which should be applied to this control, default is H.ui.LayoutAlignment.BOTTOM_RIGHT
              */
             interface Options {
-                alignment?: H.ui.LayoutAlignment;
+                alignment?: H.ui.LayoutAlignment | undefined;
             }
         }
 
@@ -6850,14 +6860,14 @@ export declare namespace H {
              * by default
              */
             interface Options {
-                unitSystem?: H.ui.UnitSystem;
-                zoom?: H.ui.ZoomControl.Options | boolean;
-                zoomrectangle?: H.ui.ZoomRectangle.Options | boolean;
-                mapsettings?: H.ui.MapSettingsControl.Options | boolean;
-                scalebar?: H.ui.ScaleBar.Options | boolean;
-                panorama?: H.ui.Pano.Options | boolean;
-                distancemeasurement?: H.ui.DistanceMeasurement.Options | boolean;
-                locale?: H.ui.i18n.Localization | string;
+                unitSystem?: H.ui.UnitSystem | undefined;
+                zoom?: (H.ui.ZoomControl.Options | boolean) | undefined;
+                zoomrectangle?: (H.ui.ZoomRectangle.Options | boolean) | undefined;
+                mapsettings?: (H.ui.MapSettingsControl.Options | boolean) | undefined;
+                scalebar?: (H.ui.ScaleBar.Options | boolean) | undefined;
+                panorama?: (H.ui.Pano.Options | boolean) | undefined;
+                distancemeasurement?: (H.ui.DistanceMeasurement.Options | boolean) | undefined;
+                locale?: (H.ui.i18n.Localization | string) | undefined;
             }
         }
 
@@ -6896,10 +6906,10 @@ export declare namespace H {
              * @property sliderSnaps {boolean=} - flag whether slider should snap to the integer values or not, defaults to false. This option has effect only if slider is enabled.
              */
             interface Options {
-                zoomSpeed?: number;
-                alignment?: H.ui.LayoutAlignment;
-                slider?: boolean;
-                sliderSnaps?: boolean;
+                zoomSpeed?: number | undefined;
+                alignment?: H.ui.LayoutAlignment | undefined;
+                slider?: boolean | undefined;
+                sliderSnaps?: boolean | undefined;
             }
         }
 
@@ -6921,7 +6931,7 @@ export declare namespace H {
              * bounding rectangle into the view port.
              */
             interface Options {
-                alignment?: H.ui.LayoutAlignment;
+                alignment?: H.ui.LayoutAlignment | undefined;
 
                 adjustZoom?(n: number, m: H.Map): number;
             }
@@ -7338,8 +7348,8 @@ export declare namespace H {
              * @property callback {function(H.util.Event)=} - Optional callback function to call once context item is selected
              */
             interface Options {
-                label?: string;
-                disabled?: boolean;
+                label?: string | undefined;
+                disabled?: boolean | undefined;
 
                 callback?(event: H.util.Event): void;
             }
