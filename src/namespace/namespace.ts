@@ -6787,7 +6787,7 @@ export declare namespace H {
         /**
          * This class encapsulates map UI functionality.
          */
-        class UI implements H.util.ICapturable {
+        class UI extends H.util.EventTarget implements H.util.ICapturable {
             /**
              * Constructor
              * @param map {H.Map}
