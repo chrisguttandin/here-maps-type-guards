@@ -1909,7 +1909,6 @@ export declare namespace H {
             constructor(opt_options?: H.map.Group.Options);
 
             /**
-             *
              * @param callback {function(!H.map.Object, number, !H.map.Group)}
              * @param opt_recursive {boolean=} - Indicates whether sub groups should be traversed recursively
              * @param opt_context {*=} - The context to use as "this" within the callback
