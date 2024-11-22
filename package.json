@@ -32,7 +32,7 @@
         "grunt-contrib-copy": "^1.0.0",
         "grunt-replace": "^2.0.2",
         "grunt-sh": "^0.2.1",
-        "husky": "^9.1.6",
+        "husky": "^9.1.7",
         "karma": "^6.4.4",
         "karma-browserstack-launcher": "^1.6.0",
         "karma-chrome-launcher": "^3.2.0",
