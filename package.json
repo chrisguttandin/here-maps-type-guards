@@ -72,7 +72,7 @@
         "url": "https://github.com/chrisguttandin/here-maps-type-guards.git"
     },
     "scripts": {
-        "build": "rimraf build/* && cp node_modules/@types/heremaps/index.d.ts src/namespace/namespace.ts && sed -i '' 's/declare namespace H/\\/\\* tslint:disable \\*\\/\\nexport declare namespace H/g' src/namespace/namespace.ts && tsc --project src/tsconfig.json && rollup --config config/rollup/bundle.mjs",
+        "build": "rimraf build/* && cp node_modules/@types/heremaps/index.d.ts src/namespace/namespace.ts && npx replace-in-file /declare\\\\snamespace\\\\sH/ '/* tslint:disable */\nexport declare namespace H' src/namespace/namespace.ts && tsc --project src/tsconfig.json && rollup --config config/rollup/bundle.mjs",
         "lint": "npm run lint:config && npm run lint:src && npm run lint:test",
         "lint:config": "eslint --config config/eslint/config.json --ext .cjs --ext .js --ext .mjs --report-unused-disable-directives config/",
         "lint:src": "tslint --config config/tslint/src.json --project src/tsconfig.json src/*.ts src/**/*.ts",
