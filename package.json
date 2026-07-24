@@ -29,7 +29,7 @@
         "eslint-config-holy-grail": "^63.0.6",
         "globals": "^17.7.0",
         "husky": "^9.1.7",
-        "lint-staged": "^17.0.7",
+        "lint-staged": "^17.0.8",
         "prettier": "^3.8.4",
         "replace-in-file": "^8.4.0",
         "rimraf": "^6.1.3",
