@@ -56,6 +56,7 @@
     "main": "build/es5/bundle.js",
     "module": "build/es2019/module.js",
     "name": "here-maps-type-guards",
+    "packageManager": "npm@12",
     "repository": {
         "type": "git",
         "url": "https://github.com/chrisguttandin/here-maps-type-guards.git"
